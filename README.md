@@ -1,4 +1,4 @@
-# This is a empty project for python [![Build Status](https://travis-ci.org/ADU-21/python-stencil.svg?branch=master)](https://travis-ci.org/ADU-21/python-stencil) 
+# This is an empty project for python [![Build Status](https://travis-ci.org/ADU-21/python-stencil.svg?branch=master)](https://travis-ci.org/ADU-21/python-stencil) 
 
 ```
 git clone https://github.com/ADU-21/python-stencil.git
