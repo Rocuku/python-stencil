@@ -1,25 +1,25 @@
-# This is an empty project for python [![Build Status](https://travis-ci.org/ADU-21/python-stencil.svg?branch=master)](https://travis-ci.org/ADU-21/python-stencil) 
+# Game of life
 
+## 命令行运行
 ```
-git clone https://github.com/ADU-21/python-stencil.git
-```
-
-## Install dependences
-```
-pip install -r ./requirements.txt
+python web/web/run.py
 ```
 
-## Test
+可选参数
 ```
-nosetests
+--file_path=test_case/test_case_1
+--height=9
+--weight=9
+--time_slot=1
+```
+height 与 weight 参数用于生成随机初始棋盘，设置file_path 的情况下，height 与 weight 设置无效，输入为 file_path 内保存的棋盘文件。
+
+time_slot 为迭代速度，单位为秒。
+
+
+## 网页显示
+```
+python manage.py runserver
 ```
 
-## Build
-```
-pyinstaller -F src/run.py --clean
-```
-
-## Run
-```
-./dist/run
-```
+浏览器转到 [127.0.0.1:8000](127.0.0.1:8000) 进行查看
