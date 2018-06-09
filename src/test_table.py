@@ -66,7 +66,29 @@ class TestTable(unittest.TestCase):
 
 		self.assertEqual(1, result)
 
-	
+	def test_next_generation(self):
+		table = Table()
+
+		table.height = 3
+		table.weight = 3
+		table.cells = [[Cell(False), Cell(False), Cell(False)], 
+						[Cell(True), Cell(True), Cell(True)], 
+						[Cell(False), Cell(False), Cell(False)]]
+
+		table.next_generation()
+
+		self.assertFalse(table.cells[0][0].state)
+		self.assertTrue(table.cells[0][1].state)
+		self.assertFalse(table.cells[0][2].state)
+
+		self.assertFalse(table.cells[1][0].state)
+		self.assertTrue(table.cells[1][1].state)
+		self.assertFalse(table.cells[1][2].state)
+		
+		self.assertFalse(table.cells[2][0].state)
+		self.assertTrue(table.cells[2][1].state)
+		self.assertFalse(table.cells[2][2].state)
+
 
 
 

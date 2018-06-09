@@ -58,6 +58,15 @@ class Table(object):
 
 		return number_of_alive_neighbour
 
+	def next_generation(self):
+		for i in range(self.height):
+			for j in range(self.weight):
+				number_of_alive_neighbour = self.get_number_of_alive_neighbour(i, j)
+				self.cells[i][j].get_next_state(number_of_alive_neighbour)
+
+		for i in range(self.height):
+			for j in range(self.weight):
+				self.cells[i][j].turn()
 
 
 
