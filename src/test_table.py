@@ -1,6 +1,7 @@
 import unittest
 
 from Table import Table
+from Cell import Cell
 
 class TestTable(unittest.TestCase):
 
@@ -32,6 +33,28 @@ class TestTable(unittest.TestCase):
 		self.assertFalse(table.cells[1][1].state)
 		self.assertFalse(table.cells[2][0].state)
 		self.assertFalse(table.cells[2][1].state)
+
+	def test_check_cell_out_table(self):
+		table = Table()
+
+		table.height = 3
+		table.weight = 2
+
+		is_in_table = table.check_cell_is_in_table(3, 1)
+
+		self.assertFalse(is_in_table)
+
+
+	def test_check_cell_in_table(self):
+		table = Table()
+
+		table.height = 3
+		table.weight = 2
+
+		is_in_table = table.check_cell_is_in_table(1, 1)
+
+		self.assertTrue(is_in_table)
+
 
 
 

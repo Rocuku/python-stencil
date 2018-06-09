@@ -22,4 +22,13 @@ class Table(object):
 				temp.append(Cell(test_matrix[i * weight + j]))
 			self.cells.append(temp)
 
+	def check_cell_is_in_table(self, h, w):
+		if h < self.height and w < self.weight and h >= 0 and w >= 0:
+			return True
+		else: 
+			return False
+
+	def get_number_of_alive_neighbour(self, h, w):
+		pass
+		
 
