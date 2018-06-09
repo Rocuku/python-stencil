@@ -11,7 +11,6 @@ function timedCount() {
     timer_device = setTimeout("timedCount()", time_slot * 1000);	
 }
 
-
 function show(){
 	var request = $.ajax({
 		url: "/show_table/" ,
@@ -36,8 +35,6 @@ function show(){
 		}
 		console.log(show_table_html);
 		$("#table").html(show_table_html);
-//		anime({targets: '.changed', scale: 1.2, easing: 'easeOutExpo'});
-//		anime({targets: '.changed', scale: 1, easing: 'easeOutExpo'});
 		last = now;
 	});
 }
@@ -56,7 +53,6 @@ $(document).ready(function(){
 				dataType: "html"
 			});
 			request.done(function(msg){
-				$('.alert').html('重置成功！').addClass('alert-success').show().delay(1500).fadeOut();
 			});
 		});
 	

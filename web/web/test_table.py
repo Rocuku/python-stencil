@@ -116,7 +116,7 @@ class TestTable(unittest.TestCase):
 						[Cell(False), Cell(False), Cell(False)]]
 
 		show=table.show_table()
-		self.assertEqual(show, "      \n * * *\n     ")
+		self.assertEqual(show, "ooo\n***\nooo")
 
 
 

@@ -5,8 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User, AnonymousUser
 from django.forms.models import model_to_dict  
 import json, time
-from Table import Table
-from Cell import Cell
+from web.Table import Table
 from web import settings
 		
 def home(request) :
