@@ -11,3 +11,6 @@ class Cell(object):
 
 		if number_of_alive_neigbhour == 3:
 			self.state = True
+
+		if number_of_alive_neigbhour == 2:
+			self.state = self.state
