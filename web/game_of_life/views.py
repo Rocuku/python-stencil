@@ -17,6 +17,6 @@ def show_table(request) :
 	return HttpResponse(settings.table.show_table())
 
 def new_random_table(request) :
-	settings.table = Table(height = 3, weight = 3)
+	settings.table = Table(height = 7, weight = 7)
 	return HttpResponse("200")
 

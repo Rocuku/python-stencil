@@ -77,8 +77,8 @@ class Table(object):
 		for i in range(self.height):
 			for j in range(self.weight):
 				show = show + '*' if self.cells[i][j].state else show + 'o'
-			show += '<br />'
-		return show[: len(show) - 2]
+			show += '\n'
+		return show[: len(show) - 1]
 
 
 		

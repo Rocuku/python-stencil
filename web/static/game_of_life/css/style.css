@@ -1,0 +1,24 @@
+.container {
+	margin: 20px;
+}
+.cell {
+  width: 3em;
+  height: 3em;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 50%;
+  background: #81C784;
+}
+
+.alive {
+  background: #81C784;
+}
+
+.dead {
+  background: #90A4AE;
+}
+
+.line{
+    display: flex;
+}
+
