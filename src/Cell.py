@@ -14,3 +14,6 @@ class Cell(object):
 
 		if number_of_alive_neighbour == 2:
 			self.state = self.state
+
+	def get_number_of_alive_neighbour():
+		pass
