@@ -55,7 +55,16 @@ class TestTable(unittest.TestCase):
 
 		self.assertTrue(is_in_table)
 
+	def test_get_number_of_alive_neighbour(self):
+		table = Table()
 
+		table.height = 3
+		table.weight = 2
+		table.cells = [[Cell(True), Cell(False)], [Cell(False), Cell(False)], [Cell(False), Cell(False)]]
+
+		result = table.get_number_of_alive_neighbour(1, 1)
+
+		self.assertEqual(1, result)
 
 
 

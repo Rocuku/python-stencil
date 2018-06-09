@@ -29,6 +29,38 @@ class Table(object):
 			return False
 
 	def get_number_of_alive_neighbour(self, h, w):
-		pass
+		number_of_alive_neighbour = 0
+		if self.check_cell_is_in_table(h, w):
+			if self.check_cell_is_in_table(h + 1, w + 1):
+				if self.cells[h + 1][w + 1].state:
+					number_of_alive_neighbour += 1
+			if self.check_cell_is_in_table(h + 1, w):
+				if self.cells[h + 1][w].state:
+					number_of_alive_neighbour += 1
+			if self.check_cell_is_in_table(h + 1, w - 1):
+				if self.cells[h + 1][w - 1].state:
+					number_of_alive_neighbour += 1
+			if self.check_cell_is_in_table(h, w + 1):
+				if self.cells[h][w + 1].state:
+					number_of_alive_neighbour += 1
+			if self.check_cell_is_in_table(h, w - 1):
+				if self.cells[h][w - 1].state:
+					number_of_alive_neighbour += 1
+			if self.check_cell_is_in_table(h - 1, w + 1):
+				if self.cells[h - 1][w + 1].state:
+					number_of_alive_neighbour += 1
+			if self.check_cell_is_in_table(h - 1, w):
+				if self.cells[h - 1][w].state:
+					number_of_alive_neighbour += 1
+			if self.check_cell_is_in_table(h - 1, w - 1):
+				if self.cells[h - 1][w - 1].state:
+					number_of_alive_neighbour += 1
+
+		return number_of_alive_neighbour
+
+
+
+
+
 		
 
