@@ -8,3 +8,6 @@ class Cell(object):
 
 		if number_of_alive_neigbhour > 3:
 			self.state = False
+
+		if number_of_alive_neigbhour == 3:
+			self.state = True
