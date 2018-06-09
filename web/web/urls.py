@@ -22,4 +22,6 @@ urlpatterns = [
     url(r'^$', game_of_life.views.home, name='home'),
     url(r'^show_table/', game_of_life.views.show_table, name='show_table'),
     url(r'^new_random_table/', game_of_life.views.new_random_table, name='new_random_table'),
+    url(r'^new_input_table/', game_of_life.views.new_input_table, name='new_input_table'),
+
 ]

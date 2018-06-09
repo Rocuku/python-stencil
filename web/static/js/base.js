@@ -20,20 +20,18 @@ function show(){
 	});
 	request.done(function(msg){
 		now = msg.split("\n");
-		show_table_html = ""
-		for(i = 0, len = now.length; i < len; i++) {
-			show_table_html += "<div class=\"line\">"
-			for(j = 0, len = now.length; j < len; j++) {
-	   			cell = now[i][j];
-	   			temp = ""
-	   			if(JSON.stringify(last) != '[]' && now[i][j] != last[i][j]) temp += "changed ";
+		show_table_html = "";
+		for(i = 0, height = now.length; i < height; i++) {
+			show_table_html += "<div class=\"row\">"
+			for(j = 0, weight = now[0].length; j < weight; j++) {
+	   			temp = "";
 	   			if(now[i][j] == "*") temp += "alive ";
 	   			if(now[i][j] == "o") temp += "dead ";
-					show_table_html += "<div class = \"container\"><div class=\"cell " + temp + "\"></div></div>";
+					show_table_html += "<div class = \"col-md-1\"><div class=\"cell " + temp + "\"></div></div>";
 			}
 			show_table_html += "</div>"
 		}
-		console.log(show_table_html);
+		$("#table").width(now[0].length * 50);
 		$("#table").html(show_table_html);
 		last = now;
 	});
@@ -41,7 +39,6 @@ function show(){
 
 $(document).ready(function(){
 		$("#time_slot_click").click(function(){
-			console.log($("#time_slot_text").val());
 			time_slot = $("#time_slot_text").val();
 		});
 
@@ -55,7 +52,19 @@ $(document).ready(function(){
 			request.done(function(msg){
 			});
 		});
-	
+
+		$("#input_table_click").click(function(){
+			var request = $.ajax({
+				url: "/new_input_table/" ,
+				method: "GET" , 
+				data: {input_table: $("#input_table_text").val()}, 
+				dataType: "html"
+			});
+			request.done(function(msg){
+				last = [];
+				$('#inputmodal').modal('toggle');  
+			});
+		});
 });
 
 

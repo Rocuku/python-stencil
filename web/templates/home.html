@@ -9,39 +9,59 @@
     
     <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/static/game_of_life/css/style.css" >
-
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" >
     <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="//cdn.bootcss.com/animejs/2.2.0/anime.js"></script>
-
-    <script src="/static/game_of_life/js/base.js"></script>
-
+    <script src="/static/js/base.js"></script>
 <head>
 
 <nav class="navbar navbar-default">
 	<a class="navbar-brand" href="#">Game of Life</a>
-    <form class="navbar-form navbar-left" role="text">
+    <div class="navbar-form navbar-left" role="text">
       <div class="form-group">
         <input type="text" class="form-control" id="time_slot_text" placeholder="时间间隔" >
       </div>
-      <button type="submit" class="btn btn-default" id="time_slot_click">设置间隔</button>
-      <button type="submit" class="btn btn-default" id="random_table_click">随机初始化</button>
-    </form>
+      <button class="btn btn-default" id="time_slot_click">设置间隔</button>
+      <button class="btn btn-default" id="random_table_click">随机初始化</button>
+    </div>
+
+    <div class="navbar-form navbar-right" role="text">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#inputmodal">
+            手动输入棋盘
+        </button>
+    </div>
 </nav>
 
 
 <div id="page-wrapper-without-sidebar">
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div id = "table"></div>
-            </div>
-        </div>
+        <div id = "table"></div>    
     </div>
 </div>
 </div>
+
+
+
+<div class="modal fade" id="inputmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">输入棋盘</h4>
+      </div>
+      <div class="modal-body">
+        <textarea type="text" id="input_table_text" class="form-control" rows="7" placeholder="以矩阵形式输入初始棋盘，0表示细胞死亡，1表示细胞存活，例如：&#10;0 0 0&#10;1 1 1&#10;0 0 0" ></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" id="input_table_click">输入</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Stack the columns on mobile by making one full-width and the other half-width -->
 
 

@@ -19,3 +19,9 @@ def new_random_table(request) :
 	settings.table = Table(height = 7, weight = 7)
 	return HttpResponse("200")
 
+def new_input_table(request) :
+	print request.GET.get("input_table")
+	with open("../test_case/test_case_temp", 'w') as f:
+		f.write(request.GET.get("input_table"))
+	settings.table = Table(file_path="../test_case/test_case_temp")
+	return HttpResponse("200")
