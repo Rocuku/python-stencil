@@ -5,3 +5,6 @@ class Cell(object):
 	def turn(self, number_of_alive_neigbhour):
 		if number_of_alive_neigbhour < 2:
 			self.state = False
+
+		if number_of_alive_neigbhour > 3:
+			self.state = False
