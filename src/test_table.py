@@ -108,8 +108,17 @@ class TestTable(unittest.TestCase):
 		self.assertFalse(value[8])
 
 
+	def test_show_table(self):
+		table = Table()
 
+		table.height = 3
+		table.weight = 3
+		table.cells = [[Cell(False), Cell(False), Cell(False)], 
+						[Cell(True), Cell(True), Cell(True)], 
+						[Cell(False), Cell(False), Cell(False)]]
 
+		show=table.show_table()
+		self.assertEqual(show, "XXX\nOOO\nXXX")
 
 
 

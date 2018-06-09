@@ -65,6 +65,13 @@ class Table(object):
 				self.cells[i][j].turn()
 
 
+	def show_table(self):
+		show = ""
+		for i in range(self.height):
+			for j in range(self.weight):
+				show = show + 'O' if self.cells[i][j].state else show + 'X'
+			show += '\n'
+		return show[: len(show) - 1]
 
 
 		
