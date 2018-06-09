@@ -10,10 +10,10 @@ class TestCell(unittest.TestCase):
 		number_of_alive_neighbour = 1
 
 		# when
-		cell.turn(number_of_alive_neighbour)
+		cell.get_next_state(number_of_alive_neighbour)
 
 		# then
-		self.assertFalse(cell.state)
+		self.assertFalse(cell.next_state)
 
 	def test_should_dead_when_alive_cell_have_more_than3_live_neighbour(self):
 		# given
@@ -21,10 +21,10 @@ class TestCell(unittest.TestCase):
 		number_of_alive_neighbour = 4
 
 		# when
-		cell.turn(number_of_alive_neighbour)
+		cell.get_next_state(number_of_alive_neighbour)
 
 		# then
-		self.assertFalse(cell.state)
+		self.assertFalse(cell.next_state)
 
 	def test_alive_should_alive_when_alive_cell_have_equal3_live_neighbour(self):
 		# given
@@ -32,10 +32,10 @@ class TestCell(unittest.TestCase):
 		number_of_alive_neighbour = 3
 
 		# when
-		cell.turn(number_of_alive_neighbour)
+		cell.get_next_state(number_of_alive_neighbour)
 
 		# then
-		self.assertTrue(cell.state)
+		self.assertTrue(cell.next_state)
 
 	def test_dead_should_alive_when_alive_cell_have_equal3_live_neighbour(self):
 		# given
@@ -43,10 +43,10 @@ class TestCell(unittest.TestCase):
 		number_of_alive_neighbour = 3
 
 		# when
-		cell.turn(number_of_alive_neighbour)
+		cell.get_next_state(number_of_alive_neighbour)
 
 		# then
-		self.assertTrue(cell.state)
+		self.assertTrue(cell.next_state)
 
 	def test_dead_should_dead_when_alive_cell_have_equal2_live_neighbour(self):
 		# given
@@ -54,10 +54,10 @@ class TestCell(unittest.TestCase):
 		number_of_alive_neighbour = 2
 
 		# when
-		cell.turn(number_of_alive_neighbour)
+		cell.get_next_state(number_of_alive_neighbour)
 
 		# then
-		self.assertFalse(cell.state)
+		self.assertFalse(cell.next_state)
 
 	def test_alive_should_alive_when_alive_cell_have_equal2_live_neighbour(self):
 		# given
@@ -65,7 +65,31 @@ class TestCell(unittest.TestCase):
 		number_of_alive_neighbour = 2
 
 		# when
-		cell.turn(number_of_alive_neighbour)
+		cell.get_next_state(number_of_alive_neighbour)
 
 		# then
+		self.assertTrue(cell.next_state)
+
+	def test_alive_turn_dead(self):
+		cell = Cell(True)
+		cell.next_state = False
+		cell.turn()
+		self.assertFalse(cell.state)
+
+	def test_dead_turn_dead(self):
+		cell = Cell(False)
+		cell.next_state = False
+		cell.turn()
+		self.assertFalse(cell.state)
+
+	def test_alive_turn_alive(self):
+		cell = Cell(True)
+		cell.next_state = True
+		cell.turn()
+		self.assertTrue(cell.state)
+
+	def test_dead_turn_dead(self):
+		cell = Cell(False)
+		cell.next_state = True
+		cell.turn()
 		self.assertTrue(cell.state)

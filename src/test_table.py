@@ -66,6 +66,8 @@ class TestTable(unittest.TestCase):
 
 		self.assertEqual(1, result)
 
+	
+
 
 
 
