@@ -7,9 +7,10 @@ class Table(object):
 		self.height = height
 		self.weight = weight
 		if file_path:
-			self.get_file_input()
+			flatten_table = self.get_file_input(file_path)
 		else:
-			self.get_random_input()
+			flatten_table = self.get_random_input()
+		self.generate_table(flatten_table)
 
 	def get_random_input(self):
 		flatten_table = []
@@ -31,11 +32,12 @@ class Table(object):
 					flatten_table.append(int(val) == 1)
 		return flatten_table
 
-	def generate_table(self, height, weight, test_matrix):
-		for i in range(height):
+	def generate_table(self, flatten_table):
+		self.cells = []
+		for i in range(self.height):
 			temp = []
-			for j in range(weight):
-				temp.append(Cell(test_matrix[i * weight + j]))
+			for j in range(self.weight):
+				temp.append(Cell(flatten_table[i * self.weight + j]))
 			self.cells.append(temp)
 
 	def check_cell_is_in_table(self, h, w):

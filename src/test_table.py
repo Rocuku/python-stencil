@@ -19,12 +19,10 @@ class TestTable(unittest.TestCase):
 
 	def test_generate_table(self):
 		# given
-		table = Table()
-		height = 3
-		weight = 2
-		test_matrix = [True, False, False, False, False, False]
+		table = Table(height = 3, weight = 2)
+		flatten_table = [True, False, False, False, False, False]
 		# when
-		table.generate_table(height, weight, test_matrix)
+		table.generate_table(flatten_table)
 
 		# then
 		self.assertTrue(table.cells[0][0].state)
