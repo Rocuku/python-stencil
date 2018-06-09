@@ -15,6 +15,20 @@ class Table(object):
 			temp.append(bool(random.getrandbits(1)))
 		return temp
 
+	def get_file_input(self, file_path):
+		height = 0
+		weight = 0
+		value = []
+		with open(file_path) as file:
+			for line in file:
+				height += 1
+				weight = 0
+				value_list = line.split()
+				for val in value_list:
+					weight += 1
+					value.append(int(val) == 1)
+		return height, weight, value
+
 	def generate_table(self, height, weight, test_matrix):
 		for i in range(height):
 			temp = []

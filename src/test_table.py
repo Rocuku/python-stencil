@@ -84,10 +84,31 @@ class TestTable(unittest.TestCase):
 		self.assertFalse(table.cells[1][0].state)
 		self.assertTrue(table.cells[1][1].state)
 		self.assertFalse(table.cells[1][2].state)
-		
+
 		self.assertFalse(table.cells[2][0].state)
 		self.assertTrue(table.cells[2][1].state)
 		self.assertFalse(table.cells[2][2].state)
+
+	def test_get_input_table_from_file(self):
+		table = Table()
+
+		file_path = "./test_case/test_case_1"
+		height, weight, value = table.get_file_input(file_path)
+
+		self.assertEqual(height,3)
+		self.assertEqual(weight,3)
+		self.assertFalse(value[0])
+		self.assertFalse(value[1])
+		self.assertFalse(value[2])
+		self.assertTrue(value[3])
+		self.assertTrue(value[4])
+		self.assertTrue(value[5])
+		self.assertFalse(value[6])
+		self.assertFalse(value[7])
+		self.assertFalse(value[8])
+
+
+
 
 
 
