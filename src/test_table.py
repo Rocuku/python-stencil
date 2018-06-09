@@ -16,7 +16,7 @@ class TestTable(unittest.TestCase):
 		self.assertEqual(table.weight, 2)
 		self.assertEqual(3 * 2, len(result))		
 
-	def test_create_cells_matrix(self):
+	def test_generate_table(self):
 		# given
 		table = Table()
 		height = 3
