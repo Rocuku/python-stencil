@@ -7,10 +7,10 @@ class TestTable(unittest.TestCase):
 
 	def test_gen_random_input(self):
 		# given
-		table = Table()
+		table = Table(height = 3, weight = 2)
 
 		# when
-		result = table.get_random_input(3, 2)
+		result = table.get_random_input()
 
 		# then
 		self.assertEqual(table.height, 3)
@@ -93,19 +93,19 @@ class TestTable(unittest.TestCase):
 		table = Table()
 
 		file_path = "./test_case/test_case_1"
-		height, weight, value = table.get_file_input(file_path)
+		flatten_table = table.get_file_input(file_path)
 
-		self.assertEqual(height,3)
-		self.assertEqual(weight,3)
-		self.assertFalse(value[0])
-		self.assertFalse(value[1])
-		self.assertFalse(value[2])
-		self.assertTrue(value[3])
-		self.assertTrue(value[4])
-		self.assertTrue(value[5])
-		self.assertFalse(value[6])
-		self.assertFalse(value[7])
-		self.assertFalse(value[8])
+		self.assertEqual(table.height,3)
+		self.assertEqual(table.weight,3)
+		self.assertFalse(flatten_table[0])
+		self.assertFalse(flatten_table[1])
+		self.assertFalse(flatten_table[2])
+		self.assertTrue(flatten_table[3])
+		self.assertTrue(flatten_table[4])
+		self.assertTrue(flatten_table[5])
+		self.assertFalse(flatten_table[6])
+		self.assertFalse(flatten_table[7])
+		self.assertFalse(flatten_table[8])
 
 
 	def test_show_table(self):
