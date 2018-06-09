@@ -36,3 +36,14 @@ class TestCell(unittest.TestCase):
 
 		# then
 		self.assertTrue(cell.state)
+
+	def test_dead_should_alive_when_alive_cell_have_equal3_live_neigbhour(self):
+		# given
+		cell = Cell(False)
+		number_of_alive_neigbhour = 3
+
+		# when
+		cell.turn(number_of_alive_neigbhour)
+
+		# then
+		self.assertTrue(cell.state)
