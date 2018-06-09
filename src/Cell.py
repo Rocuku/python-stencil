@@ -2,15 +2,15 @@ class Cell(object):
 	def __init__(self, state):
 		self.state = state
 
-	def turn(self, number_of_alive_neigbhour):
-		if number_of_alive_neigbhour < 2:
+	def turn(self, number_of_alive_neighbour):
+		if number_of_alive_neighbour < 2:
 			self.state = False
 
-		if number_of_alive_neigbhour > 3:
+		if number_of_alive_neighbour > 3:
 			self.state = False
 
-		if number_of_alive_neigbhour == 3:
+		if number_of_alive_neighbour == 3:
 			self.state = True
 
-		if number_of_alive_neigbhour == 2:
+		if number_of_alive_neighbour == 2:
 			self.state = self.state
