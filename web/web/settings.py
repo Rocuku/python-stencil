@@ -125,5 +125,5 @@ STATIC_ROOT = os.path.join(SITE_ROOT, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (BASE_DIR, 'static')
 
-table = Table(height = 7, weight = 7)
+table = Table(height = 9, weight = 9)
 

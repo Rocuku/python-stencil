@@ -1,11 +1,10 @@
-
 .cell {
   width: 30px;
   height: 30px;
   margin-top: 2px;
   margin-bottom: 2px;
   border-radius: 50%;
-  background: #81C784;
+  background: #F0F0F0;
 }
 
 #table {
@@ -19,10 +18,5 @@
 }
 
 .dead {
-  background: #90A4AE;
+  background: #F0F0F0;
 }
-
-.line{
-    display: flex;
-}
-
