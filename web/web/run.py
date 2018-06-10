@@ -16,7 +16,7 @@ if __name__ == '__main__':
 		if argv[: 9] == "--height=":
 			height = int(argv[9:])
 		if argv[: 9] == "--weight=":
-			height = int(argv[9:])
+			weight = int(argv[9:])
 		if argv[: 12] == "--time_slot=":
 			time_slot = int(argv[12:])
 
