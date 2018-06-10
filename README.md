@@ -19,6 +19,7 @@ time_slot 为迭代速度，单位为秒。
 
 ## 网页显示
 ```
+cd web
 python manage.py runserver
 ```
 

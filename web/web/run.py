@@ -18,7 +18,7 @@ if __name__ == '__main__':
 		if argv[: 9] == "--weight=":
 			weight = int(argv[9:])
 		if argv[: 12] == "--time_slot=":
-			time_slot = int(argv[12:])
+			time_slot = float(argv[12:])
 
 	table = Table(height = height, weight = weight, file_path = file_path)
 
